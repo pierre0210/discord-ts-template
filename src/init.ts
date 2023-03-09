@@ -14,12 +14,7 @@ export const config = () => {
   if (!fs.existsSync(configFilePath)) {
     fs.writeFileSync(path.join(process.cwd(), "prod", "config.json"), JSON.stringify(exampleConfig, null, 4));
     console.log("config.json not found.");
-  }
-
-  const tempFolderPath = path.join(process.cwd(), "prod", "tmp");
-  if (!fs.existsSync(tempFolderPath)) {
-    fs.mkdirSync(path.join(process.cwd(), "prod", "tmp"));
-    console.log("tmp folder created.");
+    process.exit(1);
   }
 };
 
