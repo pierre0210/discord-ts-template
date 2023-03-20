@@ -32,7 +32,7 @@ export const register = async (client: ClientExtension) => {
     client.commands.push(cmd[name] as Command);
     console.log(`${name} command loaded`);
   }
-  const rest = new REST({ version: "9" }).setToken(process.env.TOKEN as string);
+  const rest = new REST({ version: "10" }).setToken(process.env.TOKEN as string);
   const commandData = client.commands.map((cmd) => cmd.data.toJSON());
   // Guild command registration
   if (!config.DevMode) {
